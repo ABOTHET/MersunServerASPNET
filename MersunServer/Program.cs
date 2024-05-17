@@ -1,3 +1,5 @@
+using MersunServer.Database;
+
 namespace MersunServer
 {
     public class Program
@@ -7,6 +9,8 @@ namespace MersunServer
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbContext<AppDatabase>();
 
             var app = builder.Build();
 
